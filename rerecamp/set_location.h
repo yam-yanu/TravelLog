@@ -37,5 +37,7 @@
 - (void)set_location:(int)travelNo;
 - (void)set_gps;
 - (void)finish_location;
+-(GMSMarker *)makeMarker:(UIImage *)image;
+-(void)makePath;
 
 @end

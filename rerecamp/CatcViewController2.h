@@ -26,6 +26,7 @@
 @property (weak, nonatomic) IBOutlet UIView *subview;
 @property (nonatomic, retain) CLLocationManager *locationManagerForpic;
 @property (nonatomic, retain) set_location *sl;
+@property (nonatomic, retain) GMSPolyline *rectangle;
 
 - (void)configureView;
 - (void)toolAction;

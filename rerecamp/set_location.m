@@ -182,4 +182,29 @@
     }
 }
 
+-(GMSMarker *)makeMarker:(UIImage *)image{
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    option = [[GMSMarker alloc] init];
+    option.position = CLLocationCoordinate2DMake([userDefaults doubleForKey:@"latitude"],[userDefaults doubleForKey:@"longitude"]);
+    ImgComposer *imc = [ImgComposer sharedManager];
+    UIImage *edited_image = [imc composedImageWithOriginal:image];
+    option.icon = edited_image;
+    return option;
+}
+
+-(void)makePath{
+    NSArray  *paths = NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *dir   = [paths objectAtIndex:0];
+    NSString *db_path  = [dir stringByAppendingPathComponent:@"travel_log.db"];
+    FMDatabase *db = [FMDatabase databaseWithPath:db_path];
+    NSString *sql = [[NSString alloc] initWithFormat:@"SELECT latitude,longitude FROM location ORDER BY id DESC LIMIT 1;"];
+    [db open];
+    FMResultSet *result = [db executeQuery:sql];
+    while ( [result next] ) {
+        //パス描画用の変数
+        [path addCoordinate:CLLocationCoordinate2DMake([result doubleForColumn:@"latitude"], [result doubleForColumn:@"longitude"])];
+    }
+    [db close];
+}
+
 @end

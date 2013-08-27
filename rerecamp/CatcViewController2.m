@@ -15,6 +15,7 @@
 @implementation CatcViewController2
 @synthesize locationManagerForpic;
 @synthesize sl;
+@synthesize rectangle;
 
 - (void)viewDidLoad
 {
@@ -45,7 +46,7 @@
     }
     
     //パスの描画
-    GMSPolyline *rectangle = [GMSPolyline polylineWithPath:[sl path]];
+    rectangle = [GMSPolyline polylineWithPath:[sl path]];
     rectangle.map = _mapView;
     
     
@@ -125,29 +126,28 @@
 
 //写真取ったとき
 -(void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo{
+    [locationManagerForpic stopUpdatingLocation];
     
-//    NSOperationQueue *q = [[NSOperationQueue alloc] init];
-//	[q addOperation:[[NSInvocationOperation alloc] initWithTarget:self selector:@selector(databaseinsert) object:nil]];
-//	NSLog(@"ブブブー");
+    if(error){
+        // 保存失敗時
+    }else{
+        // 保存成功時        
+        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+        [sl makeMarker:image].map = _mapView;
+    }
     
-    //データベースに写真つき位置情報を入れこむ
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    NSData *db_pic = [[NSData alloc] initWithData:UIImagePNGRepresentation(image)];
-    NSArray  *paths = NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *dir   = [paths objectAtIndex:0];
-    NSString *db_path  = [dir stringByAppendingPathComponent:@"travel_log.db"];
-    FMDatabase *db = [FMDatabase databaseWithPath:db_path];
-    NSString* sql = @"INSERT INTO location (travelNo,latitude,longitude,date,picture) VALUES (?,?,?,?,?)";
-    [db open];
-    [db executeUpdate:sql,[NSNumber numberWithInt:_travelNo],[NSNumber numberWithDouble:[userDefaults doubleForKey:@"latitude"]],[NSNumber numberWithDouble:[userDefaults doubleForKey:@"longitude"]],[NSDate date],db_pic];
-    [db close];
+    dispatch_queue_t main_queue;
+    dispatch_queue_t timeline_queue;
+    dispatch_queue_t image_queue;
     
-    GMSMarker *option = [[GMSMarker alloc] init];
-    option.position = CLLocationCoordinate2DMake([userDefaults doubleForKey:@"latitude"],[userDefaults doubleForKey:@"longitude"]);
-    ImgComposer *imc = [ImgComposer sharedManager];
-    UIImage *edited_image = [imc composedImageWithOriginal:image];
-    option.icon = edited_image;
-    option.map = _mapView;
+    main_queue = dispatch_get_main_queue();
+    timeline_queue = dispatch_queue_create("com.ey-office.gcd-sample.timeline", NULL);
+    image_queue = dispatch_queue_create("com.ey-office.gcd-sample.image", NULL);
+    
+    dispatch_async(timeline_queue, ^{
+        [self databaseinsert:(image)];
+    });
+    
     
 
 }
@@ -186,6 +186,9 @@
     [db executeUpdate:sql,[NSNumber numberWithInt:_travelNo],[NSNumber numberWithDouble:[userDefaults doubleForKey:@"latitude"]],[NSNumber numberWithDouble:[userDefaults doubleForKey:@"longitude"]],[NSDate date]];
     [db close];
     
+    [sl makePath];
+    rectangle = [GMSPolyline polylineWithPath:[sl path]];
+    rectangle.map = _mapView;
     //緯度・経度を出力
     NSLog(@"didUpdateToLocation latitude=%f, longitude=%f",
           [newLocation coordinate].latitude,
@@ -213,22 +216,19 @@
     }
 }
 
-//-(void) pathUpdate:(GMSMutablePath *)path{
-//    //パスの描画
-//    GMSPolyline *rectangle = [GMSPolyline polylineWithPath:path];
-//    rectangle.map = _mapView;
-//    
-//}
-//
-//-(void) markeUpdate:(GMSMarker *)option{
-//    //マーカーの描画
-//    for (int i = 0; i < [sl.optionArray count]; i++){
-//        GMSMarker *option = [[GMSMarker alloc] init];
-//        option = [[sl optionArray] objectAtIndex: i];
-//        option.map = _mapView;
-//    }
-//}
+
+-(void) databaseinsert:(UIImage *)image{
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSData *db_pic = [[NSData alloc] initWithData:UIImagePNGRepresentation(image)];
+    NSArray  *paths = NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *dir   = [paths objectAtIndex:0];
+    NSString *db_path  = [dir stringByAppendingPathComponent:@"travel_log.db"];
+    FMDatabase *db = [FMDatabase databaseWithPath:db_path];
+    NSString* sql = @"INSERT INTO location (travelNo,latitude,longitude,date,picture) VALUES (?,?,?,?,?)";
+    [db open];
+    [db executeUpdate:sql,[NSNumber numberWithInt:_travelNo],[NSNumber numberWithDouble:[userDefaults doubleForKey:@"latitude"]],[NSNumber numberWithDouble:[userDefaults doubleForKey:@"longitude"]],[NSDate date],db_pic];
+    [db close];    
+}
 
 @end
 
-//CGRectMake(0,0,0,0)

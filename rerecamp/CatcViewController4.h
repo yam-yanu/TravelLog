@@ -14,6 +14,7 @@
 #import "FMDatabaseAdditions.h"
 #import "set_location.h"
 #import "ImgComposer.h"
+#import "CatcViewController5.h"
 
 @interface CatcViewController4 : UIViewController
 {

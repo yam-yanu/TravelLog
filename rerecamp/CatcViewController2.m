@@ -62,6 +62,10 @@
     UIBarButtonItem *top = [[UIBarButtonItem alloc]  initWithTitle:@"おわる" style:UIBarButtonItemStyleBordered target:self action:@selector( onTapOwaru: ) ];
     toolbar.items = [ NSArray arrayWithObjects:camerabtn, top,
                      nil ];
+    UIBarButtonItem *fixedSpacer = [[ UIBarButtonItem alloc ] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil ];
+    UIBarButtonItem *flexibleSpacer = [[ UIBarButtonItem alloc ] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil ];
+    toolbar.items = [ NSArray arrayWithObjects:flexibleSpacer, camerabtn, fixedSpacer, top, flexibleSpacer, nil ];
+    fixedSpacer.width = 30;
     [self.view addSubview:toolbar];
 }
 

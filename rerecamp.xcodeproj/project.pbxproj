@@ -15,6 +15,8 @@
 		236A826117CB3A7100ADB93B /* imgframe.png in Resources */ = {isa = PBXBuildFile; fileRef = 236A826017CB3A7000ADB93B /* imgframe.png */; };
 		236A826317CB3FAC00ADB93B /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 236A826217CB3FAC00ADB93B /* libsqlite3.0.dylib */; };
 		238BA15617CC940100FAAC05 /* CatcViewController4.m in Sources */ = {isa = PBXBuildFile; fileRef = 238BA15517CC940100FAAC05 /* CatcViewController4.m */; };
+		238BA18A17CCCF1A00FAAC05 /* CatcViewController5.m in Sources */ = {isa = PBXBuildFile; fileRef = 238BA18917CCCF1A00FAAC05 /* CatcViewController5.m */; };
+		238BA18D17CD370E00FAAC05 /* remember_travel.m in Sources */ = {isa = PBXBuildFile; fileRef = 238BA18C17CD370D00FAAC05 /* remember_travel.m */; };
 		2397938817CB59DE009ADE52 /* set_location.m in Sources */ = {isa = PBXBuildFile; fileRef = 2397938517CB59DE009ADE52 /* set_location.m */; };
 		2397938917CB59DE009ADE52 /* travel_sequence.m in Sources */ = {isa = PBXBuildFile; fileRef = 2397938717CB59DE009ADE52 /* travel_sequence.m */; };
 		2397939517CB5A3C009ADE52 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 2397938C17CB5A3C009ADE52 /* FMDatabase.m */; };
@@ -69,6 +71,10 @@
 		236A826217CB3FAC00ADB93B /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		238BA15417CC940100FAAC05 /* CatcViewController4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CatcViewController4.h; sourceTree = "<group>"; };
 		238BA15517CC940100FAAC05 /* CatcViewController4.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CatcViewController4.m; sourceTree = "<group>"; };
+		238BA18817CCCF1A00FAAC05 /* CatcViewController5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CatcViewController5.h; sourceTree = "<group>"; };
+		238BA18917CCCF1A00FAAC05 /* CatcViewController5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CatcViewController5.m; sourceTree = "<group>"; };
+		238BA18B17CD370D00FAAC05 /* remember_travel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = remember_travel.h; sourceTree = "<group>"; };
+		238BA18C17CD370D00FAAC05 /* remember_travel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = remember_travel.m; sourceTree = "<group>"; };
 		2397938417CB59DE009ADE52 /* set_location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = set_location.h; sourceTree = "<group>"; };
 		2397938517CB59DE009ADE52 /* set_location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = set_location.m; sourceTree = "<group>"; };
 		2397938617CB59DE009ADE52 /* travel_sequence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = travel_sequence.h; sourceTree = "<group>"; };
@@ -238,10 +244,14 @@
 				233E185D17CB57ED00F297BA /* CatcViewController1.m */,
 				23E3E22317C67DF000E91FE6 /* CatcViewController2.h */,
 				23E3E22417C67DF000E91FE6 /* CatcViewController2.m */,
+				238BA18B17CD370D00FAAC05 /* remember_travel.h */,
+				238BA18C17CD370D00FAAC05 /* remember_travel.m */,
 				236A825A17CB346500ADB93B /* CatcViewController3.h */,
 				236A825B17CB346500ADB93B /* CatcViewController3.m */,
 				238BA15417CC940100FAAC05 /* CatcViewController4.h */,
 				238BA15517CC940100FAAC05 /* CatcViewController4.m */,
+				238BA18817CCCF1A00FAAC05 /* CatcViewController5.h */,
+				238BA18917CCCF1A00FAAC05 /* CatcViewController5.m */,
 				236A825D17CB3A3F00ADB93B /* ImgComposer.h */,
 				236A825E17CB3A3F00ADB93B /* ImgComposer.m */,
 				2397938A17CB5A3C009ADE52 /* SQLite */,
@@ -352,7 +362,12 @@
 				2397939917CB5A3C009ADE52 /* FMResultSet.m in Sources */,
 				A1E54B3217CB623B00B8CDC5 /* CatcAppDelegate.m in Sources */,
 				238BA15617CC940100FAAC05 /* CatcViewController4.m in Sources */,
+<<<<<<< HEAD
 				A18566C717CD33B0008DA1AF /* CatcFirstViewController.m in Sources */,
+=======
+				238BA18A17CCCF1A00FAAC05 /* CatcViewController5.m in Sources */,
+				238BA18D17CD370E00FAAC05 /* remember_travel.m in Sources */,
+>>>>>>> 11a5a9a9ba89ea16c23247d5d8e8acaaff9f0160
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

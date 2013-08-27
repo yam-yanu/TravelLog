@@ -10,4 +10,6 @@
 
 @interface CatcViewController3 : UITableViewController
 
+@property int i;
+
 @end

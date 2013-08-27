@@ -44,7 +44,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="4rW-VM-Faz" kind="modal" id="Bqp-LI-6cY"/>
+                                    <segue destination="vTP-bZ-KjZ" kind="modal" id="yVd-VD-88m"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -78,16 +78,16 @@
             </objects>
             <point key="canvasLocation" x="-2321" y="-1454"/>
         </scene>
-        <!--Catc View Controller3-->
-        <scene sceneID="9IX-gZ-Vbx">
+        <!--Catc View Controller3 - Root View Controller-->
+        <scene sceneID="e4V-eX-8qA">
             <objects>
-                <tableViewController id="4rW-VM-Faz" customClass="CatcViewController3" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="LIe-hO-Kxr">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                <tableViewController id="r9I-gq-qKI" customClass="CatcViewController3" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="j2W-Bj-Xwy">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="csI-w6-bPM">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="eeW-Af-0Kw">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -98,10 +98,26 @@
                             </tableViewCell>
                         </prototypes>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="Llr-0x-zzg"/>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7LU-ES-cFG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L98-dL-W5D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2321" y="-811"/>
+            <point key="canvasLocation" x="-2148" y="-865"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Bes-7j-YZw">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="vTP-bZ-KjZ" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="k4X-wp-rQG">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="r9I-gq-qKI" kind="relationship" relationship="rootViewController" id="kGT-wX-Swl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZlL-2d-Ep6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2562" y="-689"/>
         </scene>
     </scenes>
     <resources>

@@ -14,6 +14,7 @@
 
 @implementation CatcViewController2
 @synthesize locationManagerForpic;
+@synthesize locationManager;
 @synthesize sl;
 @synthesize rectangle;
 
@@ -34,7 +35,7 @@
                                                             longitude:[userDefaults doubleForKey:@"longitude"]
                                                                  zoom:13];
     self.mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
-    //self.mapView.myLocationEnabled = YES;
+    self.mapView.myLocationEnabled = YES;
     self.view = self.mapView;
 
     
@@ -48,25 +49,7 @@
     //パスの描画
     rectangle = [GMSPolyline polylineWithPath:[sl path]];
     rectangle.map = _mapView;
-    
-    
-    GMSMarker *options = [[GMSMarker alloc] init];
-    options.position = CLLocationCoordinate2DMake(34.702252, 135.500231);
-    ImgComposer *imc = [ImgComposer sharedManager];
-    UIImage *cameraimg = [UIImage imageNamed:@"testicon1.jpg"];
-    UIImage *image = [imc composedImageWithOriginal:cameraimg];
-    options.icon = image;
-    options.title = @"大阪富国生命ビル";
-    options.snippet = @"日本";
-    options.map = _mapView;
-    
 
-
-
-    
-//  [self.mapView MarkerWithPosition:options];
-	// Do any additional setup after loading the view, typically from a nib.
-    
     [self configureView];
     
 }
@@ -88,6 +71,7 @@
     locationManagerForpic = [[CLLocationManager alloc] init];
     locationManagerForpic.delegate = self;
     [locationManagerForpic startUpdatingLocation];
+    locationManagerForpic.desiredAccuracy = kCLLocationAccuracyBest;
     
     if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
 	{
@@ -133,7 +117,6 @@
         // 保存失敗時
     }else{
         // 保存成功時        
-        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
         [sl makeMarker:image].map = _mapView;
     }
     
@@ -149,7 +132,6 @@
         [self databaseinsert:(image)];
     });
     
-    
 
 }
 
@@ -163,7 +145,7 @@
 - (void)set_gps{
     if ([CLLocationManager locationServicesEnabled]) {
         // インスタンスを生成し、デリゲートの設定
-        CLLocationManager *locationManager = [[CLLocationManager alloc] init];
+        locationManager = [[CLLocationManager alloc] init];
         locationManager.delegate = self;
             [locationManager startMonitoringSignificantLocationChanges];
     }
@@ -171,6 +153,10 @@
 
 // 標準位置情報サービス・大幅変更位置情報サービスの取得に成功した場合
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation{
+    // 不要なデータは無視
+    if (newLocation.horizontalAccuracy > 2000.0) return;
+    
+
     //ユーザーデフォルトに位置情報を保存
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     [userDefaults setDouble:[newLocation coordinate].latitude forKey:@"latitude"];

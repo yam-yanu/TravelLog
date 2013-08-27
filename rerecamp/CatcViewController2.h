@@ -25,13 +25,12 @@
 @property (nonatomic, weak) IBOutlet GMSPolyline *line;
 @property (weak, nonatomic) IBOutlet UIView *subview;
 @property (nonatomic, retain) CLLocationManager *locationManagerForpic;
+@property (nonatomic, retain) CLLocationManager *locationManager;
 @property (nonatomic, retain) set_location *sl;
 @property (nonatomic, retain) GMSPolyline *rectangle;
 
 - (void)configureView;
 - (void)toolAction;
 - (void)set_gps;
-//-(void) pathUpdate:(GMSMutablePath *)path;
-//-(void) markeUpdate:(GMSMarker *)option;
 
 @end

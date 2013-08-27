@@ -50,6 +50,8 @@
 		A18566C217CC8854008DA1AF /* bg1.png in Resources */ = {isa = PBXBuildFile; fileRef = A18566BF17CC8854008DA1AF /* bg1.png */; };
 		A18566C317CC8854008DA1AF /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A18566C017CC8854008DA1AF /* icon.png */; };
 		A18566C417CC8854008DA1AF /* icon@2x .png in Resources */ = {isa = PBXBuildFile; fileRef = A18566C117CC8854008DA1AF /* icon@2x .png */; };
+		A18566C717CD33B0008DA1AF /* CatcFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A18566C617CD33B0008DA1AF /* CatcFirstViewController.m */; };
+		A18566C917CD45AE008DA1AF /* first_background.png in Resources */ = {isa = PBXBuildFile; fileRef = A18566C817CD45AD008DA1AF /* first_background.png */; };
 		A1E54B3217CB623B00B8CDC5 /* CatcAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E54B3117CB623B00B8CDC5 /* CatcAppDelegate.m */; };
 		A1E54B3517CB627800B8CDC5 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1E54B3317CB627800B8CDC5 /* MainStoryboard.storyboard */; };
 /* End PBXBuildFile section */
@@ -113,6 +115,9 @@
 		A18566BF17CC8854008DA1AF /* bg1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bg1.png; path = ../bg1.png; sourceTree = "<group>"; };
 		A18566C017CC8854008DA1AF /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		A18566C117CC8854008DA1AF /* icon@2x .png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x .png"; sourceTree = "<group>"; };
+		A18566C517CD33B0008DA1AF /* CatcFirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CatcFirstViewController.h; sourceTree = "<group>"; };
+		A18566C617CD33B0008DA1AF /* CatcFirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CatcFirstViewController.m; sourceTree = "<group>"; };
+		A18566C817CD45AD008DA1AF /* first_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first_background.png; sourceTree = "<group>"; };
 		A1E54B3017CB623B00B8CDC5 /* CatcAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CatcAppDelegate.h; sourceTree = "<group>"; };
 		A1E54B3117CB623B00B8CDC5 /* CatcAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CatcAppDelegate.m; sourceTree = "<group>"; };
 		A1E54B3417CB627800B8CDC5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
@@ -220,6 +225,9 @@
 				A1E54B3017CB623B00B8CDC5 /* CatcAppDelegate.h */,
 				A1E54B3117CB623B00B8CDC5 /* CatcAppDelegate.m */,
 				A1E54B3317CB627800B8CDC5 /* MainStoryboard.storyboard */,
+				A18566C817CD45AD008DA1AF /* first_background.png */,
+				A18566C517CD33B0008DA1AF /* CatcFirstViewController.h */,
+				A18566C617CD33B0008DA1AF /* CatcFirstViewController.m */,
 				236A826017CB3A7000ADB93B /* imgframe.png */,
 				236A825817CA572900ADB93B /* testicon1.jpg */,
 				2397938417CB59DE009ADE52 /* set_location.h */,
@@ -319,6 +327,7 @@
 				A18566C217CC8854008DA1AF /* bg1.png in Resources */,
 				A18566C317CC8854008DA1AF /* icon.png in Resources */,
 				A18566C417CC8854008DA1AF /* icon@2x .png in Resources */,
+				A18566C917CD45AE008DA1AF /* first_background.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,6 +352,7 @@
 				2397939917CB5A3C009ADE52 /* FMResultSet.m in Sources */,
 				A1E54B3217CB623B00B8CDC5 /* CatcAppDelegate.m in Sources */,
 				238BA15617CC940100FAAC05 /* CatcViewController4.m in Sources */,
+				A18566C717CD33B0008DA1AF /* CatcFirstViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

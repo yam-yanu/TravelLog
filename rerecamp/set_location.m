@@ -52,8 +52,8 @@
     NSString *dir   = [paths objectAtIndex:0];
     NSString *db_path  = [dir stringByAppendingPathComponent:@"travel_log.db"];
     FMDatabase *db = [FMDatabase databaseWithPath:db_path];
-//    NSString *sql = [[NSString alloc] initWithFormat:@"SELECT latitude,longitude,date FROM location WHERE travelNo = %d;",_travelNo];
-    NSString *sql = [[NSString alloc] initWithFormat:@"SELECT latitude,longitude,date FROM location ;"];
+    NSString *sql = [[NSString alloc] initWithFormat:@"SELECT latitude,longitude,date FROM location WHERE travelNo = %d;",_travelNo];
+    //NSString *sql = [[NSString alloc] initWithFormat:@"SELECT latitude,longitude,date FROM location ;"];
     [db open];
     FMResultSet *result = [db executeQuery:sql];
     while ( [result next] ) {
@@ -76,8 +76,8 @@
     dir   = [paths objectAtIndex:0];
     db_path  = [dir stringByAppendingPathComponent:@"travel_log.db"];
     db = [FMDatabase databaseWithPath:db_path];
-    //sql = [[NSString alloc] initWithFormat:@"SELECT id,latitude,longitude,date,picture FROM location WHERE travelNo = %d AND travelpicture IS NOT NULL;",_travelNo];
-    sql = [[NSString alloc] initWithFormat:@"SELECT id,latitude,longitude,date,picture FROM location WHERE picture IS NOT NULL;"];
+    sql = [[NSString alloc] initWithFormat:@"SELECT id,latitude,longitude,date,picture FROM location WHERE travelNo = %d AND travelpicture IS NOT NULL;",_travelNo];
+    //sql = [[NSString alloc] initWithFormat:@"SELECT id,latitude,longitude,date,picture FROM location WHERE picture IS NOT NULL;"];
     [db open];
     result = [db executeQuery:sql];
     while ( [result next] ) {
@@ -151,7 +151,7 @@
     NSString* sql = @"INSERT INTO location (travelNo,latitude,longitude,date) VALUES (?,?,?,?)";
     [db open];
     //写真以外の情報を入れる
-    [db executeUpdate:sql,[NSNumber numberWithInt:_travelNo],[NSNumber numberWithDouble:now_latitude],[NSNumber numberWithDouble:now_longitude],[NSDate date]];    
+    [db executeUpdate:sql,[NSNumber numberWithInt:[userDefaults integerForKey:@"travelNo"]],[NSNumber numberWithDouble:now_latitude],[NSNumber numberWithDouble:now_longitude],[NSDate date]];
     [db close];
     
     

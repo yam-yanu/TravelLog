@@ -1,22 +1,20 @@
 //
-//  CatcViewController3.m
+//  CatcViewController5.m
 //  rerecamp
 //
-//  Created by yukihara on 2013/08/26.
+//  Created by yukihara on 2013/08/27.
 //  Copyright (c) 2013年 edu.self. All rights reserved.
 //
 
-#import "CatcViewController3.h"
-#import "CatcViewController4.h"
+#import "CatcViewController5.h"
 
-@interface CatcViewController3 ()
+@interface CatcViewController5 ()
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
-@implementation CatcViewController3
-@synthesize i;
+@implementation CatcViewController5
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -31,9 +29,7 @@
 {
     [super viewDidLoad];
     self.navigationItem.title = @"たびろぐ";
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"もどる" style:UIBarButtonItemStylePlain target:self action:@selector(returnHome)];
-    i = 5;
-    
+
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -41,15 +37,9 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-- (void)returnHome
-{
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    
     // Dispose of any resources that can be recreated.
 }
 
@@ -58,7 +48,7 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return i;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -73,14 +63,12 @@
 //    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
+    //ここ！
     
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"a"];
-    cell.textLabel.text = @"◯◯旅行";
-    cell.detailTextLabel.text = @"日程";
-    cell.imageView.image = [UIImage imageNamed:@"testicon1.jpg"];
-        
-        return cell;
-    
+    //cell.textLabel.text = ;
+    //cell.imageView.image = ;
+    return cell;
 }
 
 /*
@@ -117,7 +105,6 @@
 // Override to support conditional rearranging of the table view.
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
 {
- 
     // Return NO if you do not want the item to be re-orderable.
     return YES;
 }
@@ -129,10 +116,11 @@
 {
     // Navigation logic may go here. Create and push another view controller.
     
-        CatcViewController4 *detailViewController = [[CatcViewController4 alloc] init];
+     /*<#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
      // ...
      // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
+     [self.navigationController pushViewController:CatcViewController5 animated:YES];
+     */
 }
 
 @end

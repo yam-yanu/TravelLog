@@ -218,8 +218,8 @@
 			children = (
 				A18566BF17CC8854008DA1AF /* bg1.png */,
 				A1E54B3017CB623B00B8CDC5 /* CatcAppDelegate.h */,
-				A1E54B3317CB627800B8CDC5 /* MainStoryboard.storyboard */,
 				A1E54B3117CB623B00B8CDC5 /* CatcAppDelegate.m */,
+				A1E54B3317CB627800B8CDC5 /* MainStoryboard.storyboard */,
 				236A826017CB3A7000ADB93B /* imgframe.png */,
 				236A825817CA572900ADB93B /* testicon1.jpg */,
 				2397938417CB59DE009ADE52 /* set_location.h */,

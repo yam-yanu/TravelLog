@@ -107,6 +107,7 @@
 
 - (void) onTapOwaru:(id)inSender{
     [travel_sequence finish_travel];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {

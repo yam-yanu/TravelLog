@@ -23,8 +23,10 @@
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     _travelNo = [userDefaults integerForKey:@"travelNo"];
     sl = [[set_location alloc]init];
-    [sl set_gps];
     [sl set_location:_travelNo];
+    locationManagerForpic = [[CLLocationManager alloc] init];
+    locationManagerForpic.delegate = self;
+    [self set_gps];
 
     //地図の作成
     GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:[userDefaults doubleForKey:@"latitude"]
@@ -34,21 +36,13 @@
     //self.mapView.myLocationEnabled = YES;
     self.view = self.mapView;
 
-
-//    //マーカーの描画
-//    for (int i = 0; i < sl.latitudeForpic.count; i++){
-//         GMSMarker *option = [[GMSMarker alloc] init];
-//         option.position = CLLocationCoordinate2DMake([sl.latitudeForpic[i] doubleValue], [sl.longitudeForpic[i] doubleValue]);
-//         //if (imagearray[i] != nil) option.icon = imagearray[i];//[UIImage imageNamed:@"testicon1.jpg"];
-//         option.map = _mapView;
-//    }
+    
     //マーカーの描画
     for (int i = 0; i < [sl.optionArray count]; i++){
         GMSMarker *option = [[GMSMarker alloc] init];
         option = [[sl optionArray] objectAtIndex: i];
         option.map = _mapView;
     }
-
     
     //パスの描画
     GMSPolyline *rectangle = [GMSPolyline polylineWithPath:[sl path]];
@@ -65,16 +59,8 @@
     options.snippet = @"日本";
     options.map = _mapView;
     
-    GMSMarker *options1 = [[GMSMarker alloc] init];
-    options1.position = CLLocationCoordinate2DMake(34.705, 135.6);
-    options1.title = @"大阪富国生命ビル";
-    options1.snippet = @"日本";
-    options1.map = _mapView;
-    
-//    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
-//    imageView.frame = CGRectMake(100, 100, 90, 90);
-//    imageView.backgroundColor = [UIColor clearColor];
-//    [self.view addSubview:imageView];
+
+
 
     
 //  [self.mapView MarkerWithPosition:options];
@@ -138,18 +124,31 @@
     [picker dismissViewControllerAnimated:YES completion:nil];
 }
 
-
+//写真取ったとき
 -(void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo{
-    //ここからPOSTDATAの作成
     
+//    NSOperationQueue *q = [[NSOperationQueue alloc] init];
+//	[q addOperation:[[NSInvocationOperation alloc] initWithTarget:self selector:@selector(databaseinsert) object:nil]];
+//	NSLog(@"ブブブー");
+    
+    //データベースに写真つき位置情報を入れこむ
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSData *db_pic = [[NSData alloc] initWithData:UIImagePNGRepresentation(image)];
     NSArray  *paths = NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *dir   = [paths objectAtIndex:0];
     NSString *db_path  = [dir stringByAppendingPathComponent:@"travel_log.db"];
     FMDatabase *db = [FMDatabase databaseWithPath:db_path];
-    NSString* sql = @"UPDATE location SET picture = (?) WHERE id = (SELECT MAX(id) FROM location)";
+    NSString* sql = @"INSERT INTO location (travelNo,latitude,longitude,date,picture) VALUES (?,?,?,?,?)";
     [db open];
-    [db executeUpdate:sql,image];
+    [db executeUpdate:sql,[NSNumber numberWithInt:_travelNo],[NSNumber numberWithDouble:[userDefaults doubleForKey:@"latitude"]],[NSNumber numberWithDouble:[userDefaults doubleForKey:@"longitude"]],[NSDate date],db_pic];
     [db close];
+    
+    GMSMarker *option = [[GMSMarker alloc] init];
+    option.position = CLLocationCoordinate2DMake([userDefaults doubleForKey:@"latitude"],[userDefaults doubleForKey:@"longitude"]);
+    ImgComposer *imc = [ImgComposer sharedManager];
+    UIImage *edited_image = [imc composedImageWithOriginal:image];
+    option.icon = edited_image;
+    option.map = _mapView;
     
 
 }
@@ -161,15 +160,23 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)set_gps{
+    if ([CLLocationManager locationServicesEnabled]) {
+        // インスタンスを生成し、デリゲートの設定
+        CLLocationManager *locationManager = [[CLLocationManager alloc] init];
+        locationManager.delegate = self;
+            [locationManager startMonitoringSignificantLocationChanges];
+    }
+}
+
 // 標準位置情報サービス・大幅変更位置情報サービスの取得に成功した場合
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation{
-    //写真用に現在地を更新
-    now_latitude = [newLocation coordinate].latitude;
-    now_longitude = [newLocation coordinate].longitude;
-    [locationManagerForpic stopUpdatingLocation];
-    
-    
-    //データベースに写真情報を登録
+    //ユーザーデフォルトに位置情報を保存
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults setDouble:[newLocation coordinate].latitude forKey:@"latitude"];
+    [userDefaults setDouble:[newLocation coordinate].longitude forKey:@"longitude"];
+        
+    //データベースに写真以外の情報を登録
     NSArray  *paths = NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *dir   = [paths objectAtIndex:0];
     NSString *db_path  = [dir stringByAppendingPathComponent:@"travel_log.db"];
@@ -177,9 +184,7 @@
     NSString* sql = @"INSERT INTO location (travelNo,latitude,longitude,date) VALUES (?,?,?,?)";
     
     [db open];
-    //写真以外の情報を入れる
-    [db executeUpdate:sql,[NSNumber numberWithInt:_travelNo],[NSNumber numberWithDouble:now_latitude],[NSNumber numberWithDouble:now_longitude],[NSDate date]];
-    
+    [db executeUpdate:sql,[NSNumber numberWithInt:_travelNo],[NSNumber numberWithDouble:[userDefaults doubleForKey:@"latitude"]],[NSNumber numberWithDouble:[userDefaults doubleForKey:@"longitude"]],[NSDate date]];
     [db close];
     
     //緯度・経度を出力
@@ -208,6 +213,22 @@
         [locationSettingConfirm show];
     }
 }
+
+//-(void) pathUpdate:(GMSMutablePath *)path{
+//    //パスの描画
+//    GMSPolyline *rectangle = [GMSPolyline polylineWithPath:path];
+//    rectangle.map = _mapView;
+//    
+//}
+//
+//-(void) markeUpdate:(GMSMarker *)option{
+//    //マーカーの描画
+//    for (int i = 0; i < [sl.optionArray count]; i++){
+//        GMSMarker *option = [[GMSMarker alloc] init];
+//        option = [[sl optionArray] objectAtIndex: i];
+//        option.map = _mapView;
+//    }
+//}
 
 @end
 

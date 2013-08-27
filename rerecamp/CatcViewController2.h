@@ -17,8 +17,7 @@
 
 @interface CatcViewController2 : UIViewController<GMSMapViewDelegate,UIActionSheetDelegate,CLLocationManagerDelegate,UINavigationControllerDelegate, UIImagePickerControllerDelegate>{
     int _travelNo;
-    double now_latitude;
-    double now_longitude;
+
 }
 
 @property (nonatomic, weak) IBOutlet GMSMapView *mapView;
@@ -30,5 +29,8 @@
 
 - (void)configureView;
 - (void)toolAction;
+- (void)set_gps;
+//-(void) pathUpdate:(GMSMutablePath *)path;
+//-(void) markeUpdate:(GMSMarker *)option;
 
 @end

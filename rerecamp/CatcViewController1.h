@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "travel_sequence.h"
 
 @interface CatcViewController1 : UIViewController
 

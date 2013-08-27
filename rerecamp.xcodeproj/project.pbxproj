@@ -26,11 +26,6 @@
 		23E3E20D17C67DF000E91FE6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23E3E20C17C67DF000E91FE6 /* CoreGraphics.framework */; };
 		23E3E21317C67DF000E91FE6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 23E3E21117C67DF000E91FE6 /* InfoPlist.strings */; };
 		23E3E21517C67DF000E91FE6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 23E3E21417C67DF000E91FE6 /* main.m */; };
-		23E3E21917C67DF000E91FE6 /* CatcAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 23E3E21817C67DF000E91FE6 /* CatcAppDelegate.m */; };
-		23E3E21B17C67DF000E91FE6 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 23E3E21A17C67DF000E91FE6 /* Default.png */; };
-		23E3E21D17C67DF000E91FE6 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 23E3E21C17C67DF000E91FE6 /* Default@2x.png */; };
-		23E3E21F17C67DF000E91FE6 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 23E3E21E17C67DF000E91FE6 /* Default-568h@2x.png */; };
-		23E3E22217C67DF000E91FE6 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23E3E22017C67DF000E91FE6 /* MainStoryboard.storyboard */; };
 		23E3E22517C67DF000E91FE6 /* CatcViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 23E3E22417C67DF000E91FE6 /* CatcViewController2.m */; };
 		23E3E22C17C67EC600E91FE6 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23E3E22B17C67EC600E91FE6 /* GoogleMaps.framework */; };
 		23E3E22E17C67F8100E91FE6 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 23E3E22D17C67F8100E91FE6 /* GoogleMaps.bundle */; };
@@ -48,6 +43,14 @@
 		23E3E24817C6806500E91FE6 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23E3E24717C6806500E91FE6 /* SystemConfiguration.framework */; };
 		23E3E24A17C683A800E91FE6 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 23E3E24917C683A800E91FE6 /* libc++.dylib */; };
 		23E3E24C17C6840E00E91FE6 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 23E3E24B17C6840E00E91FE6 /* libz.dylib */; };
+		A18566BC17CC882B008DA1AF /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A18566B917CC882B008DA1AF /* Default-568h@2x.png */; };
+		A18566BD17CC882B008DA1AF /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = A18566BA17CC882B008DA1AF /* Default.png */; };
+		A18566BE17CC882B008DA1AF /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A18566BB17CC882B008DA1AF /* Default@2x.png */; };
+		A18566C217CC8854008DA1AF /* bg1.png in Resources */ = {isa = PBXBuildFile; fileRef = A18566BF17CC8854008DA1AF /* bg1.png */; };
+		A18566C317CC8854008DA1AF /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A18566C017CC8854008DA1AF /* icon.png */; };
+		A18566C417CC8854008DA1AF /* icon@2x .png in Resources */ = {isa = PBXBuildFile; fileRef = A18566C117CC8854008DA1AF /* icon@2x .png */; };
+		A1E54B3217CB623B00B8CDC5 /* CatcAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E54B3117CB623B00B8CDC5 /* CatcAppDelegate.m */; };
+		A1E54B3517CB627800B8CDC5 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1E54B3317CB627800B8CDC5 /* MainStoryboard.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,12 +86,6 @@
 		23E3E21217C67DF000E91FE6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		23E3E21417C67DF000E91FE6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		23E3E21617C67DF000E91FE6 /* rerecamp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "rerecamp-Prefix.pch"; sourceTree = "<group>"; };
-		23E3E21717C67DF000E91FE6 /* CatcAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CatcAppDelegate.h; sourceTree = "<group>"; };
-		23E3E21817C67DF000E91FE6 /* CatcAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CatcAppDelegate.m; sourceTree = "<group>"; };
-		23E3E21A17C67DF000E91FE6 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		23E3E21C17C67DF000E91FE6 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		23E3E21E17C67DF000E91FE6 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		23E3E22117C67DF000E91FE6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		23E3E22317C67DF000E91FE6 /* CatcViewController2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CatcViewController2.h; sourceTree = "<group>"; };
 		23E3E22417C67DF000E91FE6 /* CatcViewController2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CatcViewController2.m; sourceTree = "<group>"; };
 		23E3E22B17C67EC600E91FE6 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = rerecamp/GoogleMaps.framework; sourceTree = "<group>"; };
@@ -107,6 +104,15 @@
 		23E3E24717C6806500E91FE6 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		23E3E24917C683A800E91FE6 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		23E3E24B17C6840E00E91FE6 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		A18566B917CC882B008DA1AF /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
+		A18566BA17CC882B008DA1AF /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
+		A18566BB17CC882B008DA1AF /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
+		A18566BF17CC8854008DA1AF /* bg1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bg1.png; path = ../bg1.png; sourceTree = "<group>"; };
+		A18566C017CC8854008DA1AF /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		A18566C117CC8854008DA1AF /* icon@2x .png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x .png"; sourceTree = "<group>"; };
+		A1E54B3017CB623B00B8CDC5 /* CatcAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CatcAppDelegate.h; sourceTree = "<group>"; };
+		A1E54B3117CB623B00B8CDC5 /* CatcAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CatcAppDelegate.m; sourceTree = "<group>"; };
+		A1E54B3417CB627800B8CDC5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +166,8 @@
 		23E3E1FC17C67DF000E91FE6 = {
 			isa = PBXGroup;
 			children = (
+				A18566C017CC8854008DA1AF /* icon.png */,
+				A18566C117CC8854008DA1AF /* icon@2x .png */,
 				23E3E20E17C67DF000E91FE6 /* rerecamp */,
 				23E3E20717C67DF000E91FE6 /* Frameworks */,
 				23E3E20617C67DF000E91FE6 /* Products */,
@@ -205,16 +213,17 @@
 		23E3E20E17C67DF000E91FE6 /* rerecamp */ = {
 			isa = PBXGroup;
 			children = (
+				A18566BF17CC8854008DA1AF /* bg1.png */,
+				A1E54B3017CB623B00B8CDC5 /* CatcAppDelegate.h */,
+				A1E54B3317CB627800B8CDC5 /* MainStoryboard.storyboard */,
+				A1E54B3117CB623B00B8CDC5 /* CatcAppDelegate.m */,
 				236A826017CB3A7000ADB93B /* imgframe.png */,
 				236A825817CA572900ADB93B /* testicon1.jpg */,
-				23E3E21717C67DF000E91FE6 /* CatcAppDelegate.h */,
-				23E3E21817C67DF000E91FE6 /* CatcAppDelegate.m */,
-				23E3E22017C67DF000E91FE6 /* MainStoryboard.storyboard */,
-				233E185C17CB57ED00F297BA /* CatcViewController1.h */,
 				2397938417CB59DE009ADE52 /* set_location.h */,
 				2397938517CB59DE009ADE52 /* set_location.m */,
 				2397938617CB59DE009ADE52 /* travel_sequence.h */,
 				2397938717CB59DE009ADE52 /* travel_sequence.m */,
+				233E185C17CB57ED00F297BA /* CatcViewController1.h */,
 				233E185D17CB57ED00F297BA /* CatcViewController1.m */,
 				23E3E22317C67DF000E91FE6 /* CatcViewController2.h */,
 				23E3E22417C67DF000E91FE6 /* CatcViewController2.m */,
@@ -231,13 +240,13 @@
 		23E3E20F17C67DF000E91FE6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A18566B917CC882B008DA1AF /* Default-568h@2x.png */,
+				A18566BA17CC882B008DA1AF /* Default.png */,
+				A18566BB17CC882B008DA1AF /* Default@2x.png */,
 				23E3E21017C67DF000E91FE6 /* rerecamp-Info.plist */,
 				23E3E21117C67DF000E91FE6 /* InfoPlist.strings */,
 				23E3E21417C67DF000E91FE6 /* main.m */,
 				23E3E21617C67DF000E91FE6 /* rerecamp-Prefix.pch */,
-				23E3E21A17C67DF000E91FE6 /* Default.png */,
-				23E3E21C17C67DF000E91FE6 /* Default@2x.png */,
-				23E3E21E17C67DF000E91FE6 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -295,13 +304,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				23E3E21317C67DF000E91FE6 /* InfoPlist.strings in Resources */,
-				23E3E21B17C67DF000E91FE6 /* Default.png in Resources */,
-				23E3E21D17C67DF000E91FE6 /* Default@2x.png in Resources */,
-				23E3E21F17C67DF000E91FE6 /* Default-568h@2x.png in Resources */,
-				23E3E22217C67DF000E91FE6 /* MainStoryboard.storyboard in Resources */,
 				23E3E22E17C67F8100E91FE6 /* GoogleMaps.bundle in Resources */,
 				236A825917CA572900ADB93B /* testicon1.jpg in Resources */,
 				236A826117CB3A7100ADB93B /* imgframe.png in Resources */,
+				A1E54B3517CB627800B8CDC5 /* MainStoryboard.storyboard in Resources */,
+				A18566BC17CC882B008DA1AF /* Default-568h@2x.png in Resources */,
+				A18566BD17CC882B008DA1AF /* Default.png in Resources */,
+				A18566BE17CC882B008DA1AF /* Default@2x.png in Resources */,
+				A18566C217CC8854008DA1AF /* bg1.png in Resources */,
+				A18566C317CC8854008DA1AF /* icon.png in Resources */,
+				A18566C417CC8854008DA1AF /* icon@2x .png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,7 +325,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				23E3E21517C67DF000E91FE6 /* main.m in Sources */,
-				23E3E21917C67DF000E91FE6 /* CatcAppDelegate.m in Sources */,
 				23E3E22517C67DF000E91FE6 /* CatcViewController2.m in Sources */,
 				236A825C17CB346600ADB93B /* CatcViewController3.m in Sources */,
 				236A825F17CB3A3F00ADB93B /* ImgComposer.m in Sources */,
@@ -325,6 +336,7 @@
 				2397939717CB5A3C009ADE52 /* FMDatabasePool.m in Sources */,
 				2397939817CB5A3C009ADE52 /* FMDatabaseQueue.m in Sources */,
 				2397939917CB5A3C009ADE52 /* FMResultSet.m in Sources */,
+				A1E54B3217CB623B00B8CDC5 /* CatcAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,10 +351,10 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		23E3E22017C67DF000E91FE6 /* MainStoryboard.storyboard */ = {
+		A1E54B3317CB627800B8CDC5 /* MainStoryboard.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				23E3E22117C67DF000E91FE6 /* en */,
+				A1E54B3417CB627800B8CDC5 /* en */,
 			);
 			name = MainStoryboard.storyboard;
 			sourceTree = "<group>";

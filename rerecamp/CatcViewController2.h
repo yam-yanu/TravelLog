@@ -8,13 +8,25 @@
 
 #import <UIKit/UIKit.h>
 #import <GoogleMaps/GoogleMaps.h>
+#import <CoreLocation/CoreLocation.h>
+#import "travel_sequence.h"
+#import "FMDatabase.h"
+#import "FMDatabaseAdditions.h"
+#import "set_location.h"
+#import "ImgComposer.h"
 
-@interface CatcViewController2 : UIViewController<GMSMapViewDelegate,UIActionSheetDelegate>
+@interface CatcViewController2 : UIViewController<GMSMapViewDelegate,UIActionSheetDelegate,CLLocationManagerDelegate,UINavigationControllerDelegate, UIImagePickerControllerDelegate>{
+    int _travelNo;
+    double now_latitude;
+    double now_longitude;
+}
 
 @property (nonatomic, weak) IBOutlet GMSMapView *mapView;
 @property (nonatomic, weak) IBOutlet GMSCameraPosition *camera;
 @property (nonatomic, weak) IBOutlet GMSPolyline *line;
 @property (weak, nonatomic) IBOutlet UIView *subview;
+@property (nonatomic, retain) CLLocationManager *locationManagerForpic;
+@property (nonatomic, retain) set_location *sl;
 
 - (void)configureView;
 - (void)toolAction;

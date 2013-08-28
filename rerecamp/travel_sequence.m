@@ -11,7 +11,7 @@
 @implementation travel_sequence
 
 //アプリを最初に起動したときに使用
-+ (void)first_launch{
++ (int)first_launch{
     //ユーザーデフォルト
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     
@@ -48,7 +48,7 @@
         // ユーザーデフォルトに旅Noを登録
         [userDefaults setDouble:135.491582 forKey:@"longitude"];
 
-        //データベース作成
+        //データベース作成+ダミーデータの挿入
         NSArray  *paths = NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES);
         NSString *dir   = [paths objectAtIndex:0];
         NSString *db_path  = [dir stringByAppendingPathComponent:@"travel_log.db"];
@@ -69,32 +69,13 @@
         }
         [db close];
         
-//        //デバック用
-//        //データベースに位置情報を入れる
-//        NSArray  *paths2 = NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES);
-//        NSString *dir2   = [paths2 objectAtIndex:0];
-//        NSString *db_path2  = [dir2 stringByAppendingPathComponent:@"travel_log.db"];
-//        FMDatabase *db2 = [FMDatabase databaseWithPath:db_path2];
-//        NSString *sql2 = @"INSERT INTO location (travelNo,latitude,longitude) VALUES (?,?,?)";
-//        double debug_lati = 34.698695;
-//        double debug_longi = 135.491582;
-//        //for(double i =0 ;i < 40; i++){
-//            [db2 open];
-//            //写真以外の情報を入れる
-//            if(arc4random() % 2 == 1){
-//                debug_lati += 0.001;
-//            }else{
-//                debug_longi += 0.001;
-//            }
-//            [db2 executeUpdate:sql2,0,debug_lati,debug_longi];
-//            [db2 close];
-//        //}
     
     //旅の途中か判定
     }else if(traveling == 1 ){
-
+        
+        return 1;
     }
-
+    return 0;
 }
 
 

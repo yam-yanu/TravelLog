@@ -27,8 +27,6 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    //アプリを最初に使ったか判定
-    [travel_sequence first_launch];
 }
 
 - (void)didReceiveMemoryWarning

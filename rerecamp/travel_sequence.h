@@ -13,7 +13,7 @@
 @interface travel_sequence : NSObject
 
 
-+ (void)first_launch;
++ (int)first_launch;
 + (void)start_travel;
 + (void)finish_travel;
 

@@ -362,12 +362,9 @@
 				2397939917CB5A3C009ADE52 /* FMResultSet.m in Sources */,
 				A1E54B3217CB623B00B8CDC5 /* CatcAppDelegate.m in Sources */,
 				238BA15617CC940100FAAC05 /* CatcViewController4.m in Sources */,
-<<<<<<< HEAD
 				A18566C717CD33B0008DA1AF /* CatcFirstViewController.m in Sources */,
-=======
 				238BA18A17CCCF1A00FAAC05 /* CatcViewController5.m in Sources */,
 				238BA18D17CD370E00FAAC05 /* remember_travel.m in Sources */,
->>>>>>> 11a5a9a9ba89ea16c23247d5d8e8acaaff9f0160
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

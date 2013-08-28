@@ -17,6 +17,7 @@
 		238BA15617CC940100FAAC05 /* CatcViewController4.m in Sources */ = {isa = PBXBuildFile; fileRef = 238BA15517CC940100FAAC05 /* CatcViewController4.m */; };
 		238BA18A17CCCF1A00FAAC05 /* CatcViewController5.m in Sources */ = {isa = PBXBuildFile; fileRef = 238BA18917CCCF1A00FAAC05 /* CatcViewController5.m */; };
 		238BA18D17CD370E00FAAC05 /* remember_travel.m in Sources */ = {isa = PBXBuildFile; fileRef = 238BA18C17CD370D00FAAC05 /* remember_travel.m */; };
+		238BA19117CD8E7D00FAAC05 /* gyoumurei.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 238BA19017CD8E7D00FAAC05 /* gyoumurei.jpg */; };
 		2397938817CB59DE009ADE52 /* set_location.m in Sources */ = {isa = PBXBuildFile; fileRef = 2397938517CB59DE009ADE52 /* set_location.m */; };
 		2397938917CB59DE009ADE52 /* travel_sequence.m in Sources */ = {isa = PBXBuildFile; fileRef = 2397938717CB59DE009ADE52 /* travel_sequence.m */; };
 		2397939517CB5A3C009ADE52 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 2397938C17CB5A3C009ADE52 /* FMDatabase.m */; };
@@ -73,6 +74,7 @@
 		238BA18917CCCF1A00FAAC05 /* CatcViewController5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CatcViewController5.m; sourceTree = "<group>"; };
 		238BA18B17CD370D00FAAC05 /* remember_travel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = remember_travel.h; sourceTree = "<group>"; };
 		238BA18C17CD370D00FAAC05 /* remember_travel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = remember_travel.m; sourceTree = "<group>"; };
+		238BA19017CD8E7D00FAAC05 /* gyoumurei.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = gyoumurei.jpg; sourceTree = "<group>"; };
 		2397938417CB59DE009ADE52 /* set_location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = set_location.h; sourceTree = "<group>"; };
 		2397938517CB59DE009ADE52 /* set_location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = set_location.m; sourceTree = "<group>"; };
 		2397938617CB59DE009ADE52 /* travel_sequence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = travel_sequence.h; sourceTree = "<group>"; };
@@ -222,6 +224,7 @@
 		23E3E20E17C67DF000E91FE6 /* rerecamp */ = {
 			isa = PBXGroup;
 			children = (
+				238BA19017CD8E7D00FAAC05 /* gyoumurei.jpg */,
 				A18566BF17CC8854008DA1AF /* bg1.png */,
 				A1E54B3017CB623B00B8CDC5 /* CatcAppDelegate.h */,
 				A1E54B3117CB623B00B8CDC5 /* CatcAppDelegate.m */,
@@ -329,6 +332,7 @@
 				A18566C217CC8854008DA1AF /* bg1.png in Resources */,
 				A18566C317CC8854008DA1AF /* icon.png in Resources */,
 				A18566C417CC8854008DA1AF /* icon@2x .png in Resources */,
+				238BA19117CD8E7D00FAAC05 /* gyoumurei.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

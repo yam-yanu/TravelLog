@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "remember_travel.h"
 
-@interface CatcViewController3 : UITableViewController
-
-@property int i;
+@interface CatcViewController3 : UITableViewController<UITableViewDataSource, UITableViewDelegate>
+{
+    remember_travel *rt;
+}
+@property (weak, nonatomic) IBOutlet UITableView *myTableView;
 
 @end

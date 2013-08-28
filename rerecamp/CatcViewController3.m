@@ -16,7 +16,7 @@
 @end
 
 @implementation CatcViewController3
-@synthesize i;
+@synthesize myTableView;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -32,7 +32,12 @@
     [super viewDidLoad];
     self.navigationItem.title = @"たびろぐ";
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"もどる" style:UIBarButtonItemStylePlain target:self action:@selector(returnHome)];
-    i = 5;
+    rt = [[remember_travel alloc]init];
+    [rt setTravelList];
+    [myTableView setDataSource:self];
+    [myTableView setDelegate:self];
+    
+    
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -58,29 +63,38 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return i;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
     return 1;
+    //return [rt.travelName count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    UITableViewCell * cell1 = [[ UITableViewCell alloc ] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell1" ];
+    cell1.imageView.image = [ UIImage imageNamed:@"gyoumurei.jpg" ];
+    cell1.textLabel.text = @"北海道旅行";
+    cell1.detailTextLabel.text = @"7月28日〜8月3日";
     
-    // Configure the cell...
+//    UITableViewCell *cell;
+//    
+//    if(indexPath.row==0){ //0行目のセル
+//        //カスタムセルを選ぶ
+//        cell =  [myTableView dequeueReusableCellWithIdentifier:@"helloCell"];
+//        
+//        //各要素にはタグでアクセスする
+//        UILabel *idLabel = (UILabel*)[cell viewWithTag:1];
+//        idLabel.text = @"Bye";
+//        
+//    }else if(indexPath.row==1){//1行目のセル
+//        cell =  [myTableView dequeueReusableCellWithIdentifier:@"switchCell"];
+//    }
     
-    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"a"];
-    cell.textLabel.text = @"◯◯旅行";
-    cell.detailTextLabel.text = @"日程";
-    cell.imageView.image = [UIImage imageNamed:@"testicon1.jpg"];
-        
-        return cell;
-    
+    return cell1;
 }
 
 /*

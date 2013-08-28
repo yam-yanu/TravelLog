@@ -12,8 +12,10 @@
 
 @interface remember_travel : NSObject
 
+@property (nonatomic, retain) NSMutableArray *travelName;
 @property (nonatomic, retain) NSMutableArray *date;
 @property (nonatomic, retain) NSMutableArray *picture;
 -(void)set_array:(int)travelNo;
+-(void)setTravelList;
 
 @end

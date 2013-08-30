@@ -34,10 +34,10 @@
     //初めての起動なら初期化＋旅行中なら地図に画面遷移
     if([travel_sequence first_launch] == 1){
         CatcViewController2 *view2 = [self.storyboard instantiateViewControllerWithIdentifier:@"travelView"];
-        [self presentModalViewController:view2 animated:YES ];
+        [self presentViewController: view2 animated:YES completion: nil];
     }else{
         CatcViewController1 *view1 = [self.storyboard instantiateViewControllerWithIdentifier:@"homeView"];
-        [self presentModalViewController:view1 animated:YES ];
+       [self presentViewController: view1 animated:YES completion: nil];
     }
     
 }

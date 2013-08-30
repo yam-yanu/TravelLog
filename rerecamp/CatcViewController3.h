@@ -13,6 +13,5 @@
 {
     remember_travel *rt;
 }
-@property (weak, nonatomic) IBOutlet UITableView *myTableView;
-
+@property (nonatomic,retain) IBOutlet UITableView *myTableView;
 @end

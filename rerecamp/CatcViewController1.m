@@ -37,7 +37,6 @@
 
 
 - (IBAction)startButton:(id)sender {
-    NSLog(@"ok");
     [travel_sequence start_travel];
 }
 @end

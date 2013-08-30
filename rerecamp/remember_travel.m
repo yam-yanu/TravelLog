@@ -26,17 +26,17 @@
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     int travelNo = [userDefaults integerForKey:@"travelNo"];
     for(int i=1;i<=travelNo;i++){
-        NSString *sql = [[NSString alloc] initWithFormat:@"SELECT travelNo,date,picture FROM location WHERE travelNo = %d AND travelpicture IS NOT NULL LIMIT 1;",travelNo];
+        //はじめの時間
+        NSString *sql = [[NSString alloc] initWithFormat:@"SELECT travelNo,date,picture FROM location WHERE travelNo = %d LIMIT 1",i];//AND travelpicture IS NOT NULL LIMIT 1;",travelNo];
         FMResultSet *result = [db executeQuery:sql];
         while ( [result next] ) {
             //変換用
-            [travelName insertObject:[NSString stringWithFormat:@"旅行%d",i] atIndex:(i-0)];
             NSDateFormatter *outputFormatter = [[NSDateFormatter alloc] init];
-            [outputFormatter setDateFormat:@"HH:mm 'on' EEEE MMMM d"];
+            [outputFormatter setDateFormat:@"yyyy年 M/d"];
             NSString *str =  [outputFormatter stringFromDate:[result dateForColumn:@"date"]];
-            UIImage *pic = [[UIImage alloc] initWithData:[result dataForColumn:@"picture"]];
-            [date insertObject:str atIndex:(i-0)];
-            [picture insertObject:[result dataForColumn:@"picture"] atIndex:(i-0)];
+            //UIImage *pic = [[UIImage alloc] initWithData:[result dataForColumn:@"picture"]];
+            [date insertObject:str atIndex:(i-1)];
+            //[picture insertObject:[result dataForColumn:@"picture"] atIndex:(i-0)];
         }
     }
     [db close];
@@ -59,9 +59,9 @@
         NSDateFormatter *outputFormatter = [[NSDateFormatter alloc] init];
         [outputFormatter setDateFormat:@"HH:mm 'on' EEEE MMMM d"];
         NSString *str =  [outputFormatter stringFromDate:[result dateForColumn:@"date"]];
-        UIImage *pic = [[UIImage alloc] initWithData:[result dataForColumn:@"picture"]];
+        //UIImage *pic = [[UIImage alloc] initWithData:[result dataForColumn:@"picture"]];
         [date insertObject:str atIndex:i];
-        [picture insertObject:[result dataForColumn:@"picture"] atIndex:i];
+        //[picture insertObject:[result dataForColumn:@"picture"] atIndex:i];
         i += 1;
     }
     [db close];

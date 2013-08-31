@@ -34,6 +34,7 @@
    // cell.textLabel.text = [rt.date objectAtIndex:indexPath.row];
     cell.textLabel.text = @"謎";
     cell.detailTextLabel.text = @"冷麺かな？";
+    NSLog(@"リスト表示");
     
     return cell;
 }

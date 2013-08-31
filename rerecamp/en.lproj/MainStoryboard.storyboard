@@ -144,54 +144,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZlL-2d-Ep6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2379" y="-608"/>
+            <point key="canvasLocation" x="-2378" y="-640"/>
         </scene>
     </scenes>
     <resources>
         <image name="bg1.png" width="320" height="480"/>
         <image name="first_background.png" width="320" height="480"/>
     </resources>
-    <classes>
-        <class className="CatcFirstViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CatcFirstViewController.h"/>
-        </class>
-        <class className="CatcViewController1" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CatcViewController1.h"/>
-            <relationships>
-                <relationship kind="action" name="startButton:"/>
-            </relationships>
-        </class>
-        <class className="CatcViewController2" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CatcViewController2.h"/>
-            <relationships>
-                <relationship kind="outlet" name="camera" candidateClass="GMSCameraPosition"/>
-                <relationship kind="outlet" name="line" candidateClass="GMSPolyline"/>
-                <relationship kind="outlet" name="mapView" candidateClass="GMSMapView"/>
-                <relationship kind="outlet" name="subview" candidateClass="UIView"/>
-            </relationships>
-        </class>
-        <class className="CatcViewController3" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CatcViewController3.h"/>
-            <relationships>
-                <relationship kind="outlet" name="myTableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="GMSCameraPosition" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GMSCameraPosition.h"/>
-        </class>
-        <class className="GMSMapView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GMSMapView.h"/>
-        </class>
-        <class className="GMSOverlay" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GMSOverlay.h"/>
-        </class>
-        <class className="GMSPolyline" superclassName="GMSOverlay">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GMSPolyline.h"/>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

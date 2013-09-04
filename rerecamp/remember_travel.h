@@ -15,7 +15,15 @@
 @property (nonatomic, retain) NSMutableArray *travelName;
 @property (nonatomic, retain) NSMutableArray *date;
 @property (nonatomic, retain) NSMutableArray *picture;
+@property (nonatomic, retain) NSArray  *paths;
+@property (nonatomic, retain) NSString *dir;
+@property (nonatomic, retain) NSString *db_path;
+@property (nonatomic, retain) FMDatabase *db;
+
 -(void)set_array:(int)travelNo;
 -(void)setTravelList;
++(void)resetTravelNo;
++(void)changeTravelNo:(int)newTravelNo;
++(int)referTravelNo;
 
 @end

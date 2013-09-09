@@ -26,6 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    //NSLog(@"%d",tNo);
 	// Do any additional setup after loading the view.
 }
 
@@ -38,5 +39,9 @@
 
 - (IBAction)startButton:(id)sender {
     [travel_sequence start_travel];
+    
+    //画面遷移
+    CatcViewController2 *view2 = [self.storyboard instantiateViewControllerWithIdentifier:@"travelView"];
+    [self presentViewController: view2 animated:YES completion: nil];
 }
 @end

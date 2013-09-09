@@ -31,6 +31,7 @@
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear: animated];
+    //tNo = 1;
     //初めての起動なら初期化＋旅行中なら地図に画面遷移
     if([travel_sequence first_launch] == 1){
         CatcViewController2 *view2 = [self.storyboard instantiateViewControllerWithIdentifier:@"travelView"];

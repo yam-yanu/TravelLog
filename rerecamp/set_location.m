@@ -52,7 +52,7 @@
     NSString *dir   = [paths objectAtIndex:0];
     NSString *db_path  = [dir stringByAppendingPathComponent:@"travel_log.db"];
     FMDatabase *db = [FMDatabase databaseWithPath:db_path];
-    NSString *sql = [[NSString alloc] initWithFormat:@"SELECT latitude,longitude,date FROM location WHERE travelNo = %d;",travelNo];
+    NSString *sql = [[NSString alloc] initWithFormat:@"SELECT latitude,longitude,date FROM location WHERE travelNo = %d;",_travelNo];
     //NSString *sql = [[NSString alloc] initWithFormat:@"SELECT latitude,longitude,date FROM location ;"];
     [db open];
     FMResultSet *result = [db executeQuery:sql];
@@ -63,6 +63,7 @@
         index += 1;
 
         //パス描画用の変数に入れる
+        double lati = [result doubleForColumn:@"latitude"];
         [path addCoordinate:CLLocationCoordinate2DMake([result doubleForColumn:@"latitude"], [result doubleForColumn:@"longitude"])];
 
     }
@@ -75,7 +76,7 @@
     dir   = [paths objectAtIndex:0];
     db_path  = [dir stringByAppendingPathComponent:@"travel_log.db"];
     db = [FMDatabase databaseWithPath:db_path];
-    sql = [[NSString alloc] initWithFormat:@"SELECT id,latitude,longitude,date,picture FROM location WHERE travelNo = %d AND picture IS NOT NULL;",travelNo];
+    sql = [[NSString alloc] initWithFormat:@"SELECT id,latitude,longitude,date,picture FROM location WHERE travelNo = %d AND travelpicture IS NOT NULL;",_travelNo];
     //sql = [[NSString alloc] initWithFormat:@"SELECT id,latitude,longitude,date,picture FROM location WHERE picture IS NOT NULL;"];
     [db open];
     result = [db executeQuery:sql];

@@ -9,9 +9,7 @@
 #import <UIKit/UIKit.h>
 
 
-@interface CatcAppDelegate : UIResponder <UIApplicationDelegate>{
-    int tNo;
-}
+@interface CatcAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 

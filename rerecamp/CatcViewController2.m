@@ -24,8 +24,6 @@
     
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     _travelNo = [userDefaults integerForKey:@"travelNo"];
-    NSLog(@"旅行NO%d",_travelNo);
-    NSLog(@"旅行中？%d",[userDefaults integerForKey:@"traveling"]);
     sl = [[set_location alloc]init];
     [sl set_location:_travelNo];
     locationManagerForpic = [[CLLocationManager alloc] init];

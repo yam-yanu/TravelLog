@@ -45,9 +45,8 @@
         [userDefaults setInteger:0 forKey:@"travelNo"];
         // ユーザーデフォルトに地図の現在地（初期値は梅田）を登録
         [userDefaults setDouble:34.698695 forKey:@"latitude"];
+        // ユーザーデフォルトに旅Noを登録
         [userDefaults setDouble:135.491582 forKey:@"longitude"];
-        // ユーザーデフォルトに現在参照している旅Noを登録
-        [userDefaults setInteger:0 forKey:@"referenceTravelNo"];
 
         //データベース作成+ダミーデータの挿入
         NSArray  *paths = NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES);
@@ -58,16 +57,16 @@
         NSString *sql2 = @"INSERT INTO location (travelNo,latitude,longitude,date) VALUES (0,?,?,?);";
         [db open];
         [db executeUpdate:sql];
-//        double debug_lati = 34.698695;
-//        double debug_longi = 135.491582;
-//        for(double i =0 ;i < 40; i++){
-//            if(arc4random() % 2 == 1){
-//                debug_lati += 0.001;
-//            }else{
-//                debug_longi += 0.001;
-//            }
-//            [db executeUpdate:sql2,[NSNumber numberWithDouble:debug_lati],[NSNumber numberWithDouble:debug_longi],[NSDate date]];
-//        }
+        double debug_lati = 34.698695;
+        double debug_longi = 135.491582;
+        for(double i =0 ;i < 40; i++){
+            if(arc4random() % 2 == 1){
+                debug_lati += 0.001;
+            }else{
+                debug_longi += 0.001;
+            }
+            [db executeUpdate:sql2,[NSNumber numberWithDouble:debug_lati],[NSNumber numberWithDouble:debug_longi],[NSDate date]];
+        }
         [db close];
         
     
@@ -90,7 +89,6 @@
     NSInteger travelID = [userDefaults integerForKey:@"travelNo"];
     travelID += 1;
     [userDefaults setInteger:travelID forKey:@"travelNo"];
-    
 }
 
 //旅行を終えるときに使用
